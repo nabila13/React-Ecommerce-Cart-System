@@ -15,6 +15,7 @@ const useCart = products => {
                     storedCart.push(addedProducts);
                 }
             }
+            storedCart.forEach(cart => cart.price = cart.price * cart.quantity);
             setCart(storedCart);
         }
 

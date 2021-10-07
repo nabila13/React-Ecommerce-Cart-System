@@ -2,7 +2,16 @@ import React from 'react';
 import "./Cart.css";
 const Cart = (props) => {
     const {cart}=props;
-
+    let len=0;
+    for(const prod of cart){
+        if(prod.quantity){
+        console.log(prod);
+    len+=prod.quantity;
+        }
+        else {
+            len++;
+        }
+}
     let total=0;
     for(const product of cart){
         total+=product.price;
@@ -14,12 +23,12 @@ const Cart = (props) => {
     return (
         <div>
 <h3>Order Summary</h3>
-            <h4>Total Items ordered: {props.cart.length}</h4>
+            <h4>Total Items ordered: {len}</h4>
             <p>Total: {total}</p>
             <p>Shipping cost: {shipping}</p>
             <p>Tax amount: {tax}</p>
             <p>Final Total Cost: {finalTotal}</p>
-            <button className="btn-purchase">Place Order</button>
+            {props.children}
         </div>
     )
 }

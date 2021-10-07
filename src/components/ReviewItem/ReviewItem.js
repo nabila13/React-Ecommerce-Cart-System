@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ReviewItem = (props) => {
-    const {name,price,quantity,img,key}=props.product;
+    const {name,price,quantity,img,key}=props.cart;
     return (
         <div className="single-product">
             <img src={img} alt="image" className="img"/>
